@@ -11,7 +11,7 @@ const ALLOWED_DOMAINS = [
 ];
 
 
-const io = new Server(wsServer, { cors: { origin:  ALLOWED_DOMAINS as string[]} });
+const io = new Server(wsServer, { cors: { origin:  ALLOWED_DOMAINS as string[],credentials: true} });
 
 io.on("connection", (socket) => {
   console.log("Client connected", socket.id);
